@@ -29,7 +29,7 @@ A starter template for <a href="https://phaser.io/" target="_blank" >Phaser 3</a
 </p>
 
 <blockquote align="center">
- Want to use ES6 instead of TypeScript? Check out the <a href="https://github.com/yandeu/phaser-project-template-es6#readme" >phaser-project-template</a>
+ Want to use ES6 instead of TypeScript? Check out the <a href="https://github.com/yandeu/phaser-project-template-es6#readme" >phaser-project-template-es6</a>
 </blockquote>
 
 ---
