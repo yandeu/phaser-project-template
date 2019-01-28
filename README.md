@@ -93,7 +93,7 @@ You can easily personalize its settings by following these steps:
 
 - Replace both icons in /src/assets/icons with your own.
   - One is **512x512** the other **192x192**
-- Add your own **favicon.ico** to /src
+- Add your own **favicon.ico** to /src/assets/icons
 - Adjust these parameters in the **manifest.json** file in /src/pwa
   - **short_name**: Max. 12 characters
   - **name**: The full game name
