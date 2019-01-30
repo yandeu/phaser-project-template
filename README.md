@@ -17,6 +17,7 @@ A starter template for <a href="https://phaser.io/" target="_blank" >Phaser 3</a
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
+  <a href="#preview">Preview</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#progressive-web-app-pwa">PWA</a> •
   <a href="#native-app">Native App</a> •
@@ -44,6 +45,14 @@ A starter template for <a href="https://phaser.io/" target="_blank" >Phaser 3</a
 - Includes Phaser 3 TypeScript typings
 - For development and production builds
 - Adds a webpack ContentHash to the JavaScript files (in production)
+
+## Preview
+
+This is what you get after installing this template. A simple and clean starter template written in TypeScript. [Try it!](https://s3.eu-central-1.amazonaws.com/phaser3-typescript/starter-template/index.html)
+
+<a href="https://s3.eu-central-1.amazonaws.com/phaser3-typescript/starter-template/index.html">
+<img src="readme/screenshot.png" width="640" style='border: 0.25em solid #e1e4e8;border-radius: 20px;'/>
+</a>
 
 ## How To Use
 
