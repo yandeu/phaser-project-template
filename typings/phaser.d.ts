@@ -761,14 +761,6 @@ declare type GameConfig = {
     scale?: ScaleConfig;
 };
 
-declare namespace module {
-    /**
-     * "Computers are good at following instructions, but not at reading your mind." - Donald Knuth
-     */
-    var exports: any;
-
-}
-
 declare type TimeStepCallback = (time: number, average: number, interpolation: number)=>void;
 
 declare type GenerateTextureRendererCallback = (canvas: HTMLCanvasElement, context: CanvasRenderingContext2D)=>void;
@@ -1886,7 +1878,7 @@ declare type ParticleEmitterConfig = {
     /**
      * Sets {@link Phaser.GameObjects.Particles.ParticleEmitter#blendMode}.
      */
-    blendMode?: integer;
+    blendMode?: Phaser.BlendModes | string;
     /**
      * Sets {@link Phaser.GameObjects.Particles.ParticleEmitter#deathCallbackScope} and {@link Phaser.GameObjects.Particles.ParticleEmitter#emitCallbackScope}.
      */
@@ -19416,6 +19408,12 @@ declare namespace Phaser {
             tintFill: boolean;
 
             /**
+             * This method is left intentionally empty and does not do anything.
+             * It is retained to allow a Mesh or Quad to be added to a Container.
+             */
+            setAlpha(): void;
+
+            /**
              * Sets the Blend Mode being used by this Game Object.
              * 
              * This can be a const, such as `Phaser.BlendModes.SCREEN`, or an integer, such as 4 (for Overlay)
@@ -34720,8 +34718,8 @@ declare namespace Phaser {
 
             /**
              * Sets {@link Phaser.GameObjects.TileSprite#tileScaleX} and {@link Phaser.GameObjects.TileSprite#tileScaleY}.
-             * @param x The horizontal scale of the tiling texture.
-             * @param y The vertical scale of the tiling texture.
+             * @param x The horizontal scale of the tiling texture. If not given it will use the current `tileScaleX` value.
+             * @param y The vertical scale of the tiling texture. If not given it will use the `x` value. Default x.
              */
             setTileScale(x?: number, y?: number): this;
 
@@ -39494,6 +39492,12 @@ declare namespace Phaser {
             useQueue: boolean;
 
             /**
+             * The time this Input Manager was last updated.
+             * This value is populated by the Game Step each frame.
+             */
+            readonly time: number;
+
+            /**
              * The Boot handler is called by Phaser.Game when it first starts up.
              * The renderer is available by now.
              */
@@ -41047,7 +41051,7 @@ declare namespace Phaser {
 
                 /**
                  * Resets all Key objects created by _this_ Keyboard Plugin back to their default un-pressed states.
-                 * This can only reset keys created via the `addKey`, `addKeys` or `createCursors` methods.
+                 * This can only reset keys created via the `addKey`, `addKeys` or `createCursorKeys` methods.
                  * If you have created a Key object directly you'll need to reset it yourself.
                  * 
                  * This method is called automatically when the Keyboard Plugin shuts down, but can be
@@ -57852,6 +57856,36 @@ declare namespace Phaser {
                 const COLLISION_START: any;
 
                 /**
+                 * The Matter Physics Drag End Event.
+                 * 
+                 * This event is dispatched by a Matter Physics World instance when a Pointer Constraint
+                 * stops dragging a body.
+                 * 
+                 * Listen to it from a Scene using: `this.matter.world.on('dragend', listener)`.
+                 */
+                const DRAG_END: any;
+
+                /**
+                 * The Matter Physics Drag Event.
+                 * 
+                 * This event is dispatched by a Matter Physics World instance when a Pointer Constraint
+                 * is actively dragging a body. It is emitted each time the pointer moves.
+                 * 
+                 * Listen to it from a Scene using: `this.matter.world.on('drag', listener)`.
+                 */
+                const DRAG: any;
+
+                /**
+                 * The Matter Physics Drag Start Event.
+                 * 
+                 * This event is dispatched by a Matter Physics World instance when a Pointer Constraint
+                 * starts dragging a body.
+                 * 
+                 * Listen to it from a Scene using: `this.matter.world.on('dragstart', listener)`.
+                 */
+                const DRAG_START: any;
+
+                /**
                  * The Matter Physics World Pause Event.
                  * 
                  * This event is dispatched by an Matter Physics World instance when it is paused.
@@ -60654,77 +60688,117 @@ declare namespace Phaser {
             }
 
             /**
-             * [description]
+             * A Pointer Constraint is a special type of constraint that allows you to click
+             * and drag bodies in a Matter World. It monitors the active Pointers in a Scene,
+             * and when one is pressed down it checks to see if that hit any part of any active
+             * body in the world. If it did, and the body has input enabled, it will begin to
+             * drag it until either released, or you stop it via the `stopDrag` method.
+             * 
+             * You can adjust the stiffness, length and other properties of the constraint via
+             * the `options` object on creation.
              */
             class PointerConstraint {
                 /**
                  * 
-                 * @param scene [description]
-                 * @param world [description]
-                 * @param options [description]
+                 * @param scene A reference to the Scene to which this Pointer Constraint belongs.
+                 * @param world A reference to the Matter World instance to which this Constraint belongs.
+                 * @param options A Constraint configuration object.
                  */
-                constructor(scene: Phaser.Scene, world: Phaser.Physics.Matter.World, options: object);
+                constructor(scene: Phaser.Scene, world: Phaser.Physics.Matter.World, options?: object);
 
                 /**
-                 * [description]
+                 * A reference to the Scene to which this Pointer Constraint belongs.
+                 * This is the same Scene as the Matter World instance.
                  */
                 scene: Phaser.Scene;
 
                 /**
-                 * [description]
+                 * A reference to the Matter World instance to which this Constraint belongs.
                  */
                 world: Phaser.Physics.Matter.World;
 
                 /**
-                 * [description]
+                 * The Camera the Pointer was interacting with when the input
+                 * down event was processed.
                  */
                 camera: Phaser.Cameras.Scene2D.Camera;
 
                 /**
-                 * [description]
+                 * A reference to the Input Pointer that activated this Constraint.
+                 * This is set in the `onDown` handler.
                  */
                 pointer: Phaser.Input.Pointer;
 
                 /**
-                 * [description]
+                 * Is this Constraint active or not?
+                 * 
+                 * An active constraint will be processed each update. An inactive one will be skipped.
+                 * Use this to toggle a Pointer Constraint on and off.
                  */
                 active: boolean;
 
                 /**
-                 * The transformed position.
+                 * The internal transformed position.
                  */
                 position: Phaser.Math.Vector2;
 
                 /**
-                 * [description]
+                 * The body that is currently being dragged, if any.
+                 */
+                body: MatterJS.Body;
+
+                /**
+                 * The part of the body that was clicked on to start the drag.
+                 */
+                part: MatterJS.Body;
+
+                /**
+                 * The native Matter Constraint that is used to attach to bodies.
                  */
                 constraint: object;
 
                 /**
-                 * [description]
-                 * @param pointer [description]
+                 * A Pointer has been pressed down onto the Scene.
+                 * 
+                 * If this Constraint doesn't have an active Pointer then a hit test is
+                 * run against all active bodies in the world. If one is found it is bound
+                 * to this constraint and the drag begins.
+                 * @param pointer A reference to the Pointer that was pressed.
                  */
                 onDown(pointer: Phaser.Input.Pointer): void;
 
                 /**
-                 * [description]
+                 * Scans all active bodies in the current Matter World to see if any of them
+                 * are hit by the Pointer. The _first one_ found to hit is set as the active contraint
+                 * body.
                  */
-                onUp(): void;
+                getBody(): boolean;
 
                 /**
-                 * [description]
-                 * @param body [description]
-                 * @param position [description]
+                 * Scans the current body to determine if a part of it was clicked on.
+                 * If a part is found the body is set as the `constraint.bodyB` property,
+                 * as well as the `body` property of this class. The part is also set.
+                 * @param body The Matter Body to check.
+                 * @param position A translated hit test position.
                  */
-                getBodyPart(body: MatterJS.Body, position: Phaser.Math.Vector2): boolean;
+                hitTestBody(body: MatterJS.Body, position: Phaser.Math.Vector2): boolean;
 
                 /**
-                 * [description]
+                 * Internal update handler. Called in the Matter BEFORE_UPDATE step.
                  */
                 update(): void;
 
                 /**
-                 * [description]
+                 * Stops the Pointer Constraint from dragging the body any further.
+                 * 
+                 * This is called automatically if the Pointer is released while actively
+                 * dragging a body. Or, you can call it manually to release a body from a
+                 * constraint without having to first release the pointer.
+                 */
+                stopDrag(): void;
+
+                /**
+                 * Destroys this Pointer Constraint instance and all of its references.
                  */
                 destroy(): void;
 
@@ -65806,6 +65880,12 @@ declare namespace Phaser {
         facebook: Phaser.FacebookInstantGamesPlugin;
 
         /**
+         * A reference to the global Scale Manager.
+         * This property will only be available if defined in the Scene Injection Map.
+         */
+        scale: Phaser.Scale.ScaleManager;
+
+        /**
          * Should be overridden by your own Scenes.
          * @param time The current time. Either a High Resolution Timer value if it comes from Request Animation Frame, or Date.now if using SetTimeout.
          * @param delta The delta time in ms since the last frame. This is a smoothed and capped value based on the FPS rate.
@@ -67879,16 +67959,20 @@ declare namespace Phaser {
              * @param imageData The ImageData to put at the given location.
              * @param x The x coordinate to put the imageData. Must lay within the dimensions of this CanvasTexture and be an integer.
              * @param y The y coordinate to put the imageData. Must lay within the dimensions of this CanvasTexture and be an integer.
+             * @param dirtyX Horizontal position (x coordinate) of the top-left corner from which the image data will be extracted. Default 0.
+             * @param dirtyY Vertical position (x coordinate) of the top-left corner from which the image data will be extracted. Default 0.
+             * @param dirtyWidth Width of the rectangle to be painted. Defaults to the width of the image data.
+             * @param dirtyHeight Height of the rectangle to be painted. Defaults to the height of the image data.
              */
-            putData(imageData: ImageData, x: integer, y: integer): this;
+            putData(imageData: ImageData, x: integer, y: integer, dirtyX?: integer, dirtyY?: integer, dirtyWidth?: integer, dirtyHeight?: integer): this;
 
             /**
              * Gets an ImageData region from this CanvasTexture from the position and size specified.
              * You can write this back using `CanvasTexture.putData`, or manipulate it.
              * @param x The x coordinate of the top-left of the area to get the ImageData from. Must lay within the dimensions of this CanvasTexture and be an integer.
              * @param y The y coordinate of the top-left of the area to get the ImageData from. Must lay within the dimensions of this CanvasTexture and be an integer.
-             * @param width The width of the region to get. Must be an integer.
-             * @param height The height of the region to get. Must be an integer.
+             * @param width The width of the rectangle from which the ImageData will be extracted. Positive values are to the right, and negative to the left.
+             * @param height The height of the rectangle from which the ImageData will be extracted. Positive values are down, and negative are up.
              */
             getData(x: integer, y: integer, width: integer, height: integer): ImageData;
 
