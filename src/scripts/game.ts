@@ -7,12 +7,9 @@ const DEFAULT_HEIGHT = 720
 
 const config: GameConfig = {
   backgroundColor: '#ffffff',
-  // @ts-ignore
   scale: {
-    // @ts-ignore
     mode: Phaser.Scale.FIT,
-    // @ts-ignore
-    autoCenter: Phaser.DOM.CENTER_BOTH,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
     width: DEFAULT_WIDTH,
     height: DEFAULT_HEIGHT
   },
