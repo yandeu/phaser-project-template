@@ -9,6 +9,6 @@
     "sourceMap": true,
     "strictPropertyInitialization": false,
     "typeRoots": ["node_modules/@types", "typings"],
-    "lib": ["dom", "es2015.promise", "es5"]
+    "lib": ["dom", "es5", "esnext"]
   }
 }
