@@ -37,6 +37,8 @@ A starter template for <a href="https://phaser.io/" target="_blank" >Phaser 3</a
 
 ## Key Features
 
+- **ESNext** features ready (async/await, Rest/Spread operators)
+- Code Splitting
 - Image Optimization
 - Obfuscation
 - Development Server with SourceMap and Live-Reload
