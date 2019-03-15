@@ -39,7 +39,6 @@ A starter template for <a href="https://phaser.io/" target="_blank" >Phaser 3</a
 
 - **ESNext** features ready (async/await, Rest/Spread operators)
 - Code Splitting
-- Image Optimization
 - Obfuscation
 - Development Server with SourceMap and Live-Reload
 - PWA ready with offline support and "Add to Home screen" install prompt

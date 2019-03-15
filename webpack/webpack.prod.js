@@ -1,7 +1,6 @@
 const path = require('path')
 const merge = require('webpack-merge')
 const common = require('./webpack.common')
-const ImageminPlugin = require('imagemin-webpack-plugin').default
 const JavaScriptObfuscator = require('webpack-obfuscator')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
@@ -30,12 +29,7 @@ const prod = {
         stringArrayThreshold: 0.75
       },
       ['vendors.*.js']
-    ),
-    new ImageminPlugin({
-      disable: false,
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      cacheFolder: path.resolve('./.cache')
-    })
+    )
   ]
 }
 
