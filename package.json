@@ -30,6 +30,9 @@
     "url": "https://github.com/yandeu/phaser-project-template",
     "author": "Yannick Deubel (https://github.com/yandeu)"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "license": "MIT",
   "devDependencies": {
     "clean-webpack-plugin": "^1.0.1",
