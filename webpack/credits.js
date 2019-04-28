@@ -7,6 +7,8 @@
  * @license         {@link https://github.com/yandeu/phaser-project-template/blob/master/LICENSE|MIT License}
  */
 
+// Of course you can remove it if you really want to, but it would be nice if you would leave it there :)
+
 console.log(
   '%c %c %c %c %c Built using phaser-project-template %c https://github.com/yandeu/phaser-project-template',
   'background: #ff0000',
