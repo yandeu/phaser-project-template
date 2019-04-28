@@ -178,7 +178,9 @@ Making a multiplayer game? Check out [geckos.io](https://github.com/geckosio/gec
 
 #### Phaser 3 + Matter.js: Car Example [[Play this game](https://s3.eu-central-1.amazonaws.com/phaser3-typescript/car-on-curved-tarrain/index.html) - [Visit its Repository](https://github.com/yandeu/phaser3-matter-car-on-curved-terrain#readme)]
 
-[![phaser3-matter-car-example](https://raw.githubusercontent.com/yandeu/phaser3-matter-car-on-curved-terrain/master/readme/myimage.gif)](https://github.com/yandeu/phaser3-matter-car-on-curved-terrain#readme)
+<a href="https://github.com/yandeu/phaser3-matter-car-on-curved-terrain#readme">
+<img src="https://raw.githubusercontent.com/yandeu/phaser3-matter-car-on-curved-terrain/master/readme/myimage.gif" width="640" alt="phaser3-matter-car-example">
+</a>
 
 ## Credits
 
