@@ -24,6 +24,7 @@ A starter template for <a href="https://phaser.io/" target="_blank" >Phaser 3</a
   <a href="#custom-configurations">Custom Configurations</a> •
   <a href="#es6">ES6</a> •
   <a href="#useful-links">Useful Links</a> •
+  <a href="#multiplayer-game">Multiplayer Game</a> •
   <a href="#examples">Examples</a> •
   <a href="#credits">Credits</a> •
   <a href="#license">License</a>
@@ -154,6 +155,10 @@ We are using the [webpack-obfuscator](https://github.com/javascript-obfuscator/w
 ## ES6
 
 Want to use ES6 instead of TypeScript? Switch to the [phaser-project-template-es6](https://github.com/yandeu/phaser-project-template-es6#readme)
+
+## Multiplayer Game
+
+Making a multiplayer game? Check out [geckos.io](https://github.com/geckosio/geckos.io#readme)
 
 ## Useful Links
 
