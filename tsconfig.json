@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "esnext",
+    "module": "commonjs",
     "strict": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
     "allowUnreachableCode": false,
     "sourceMap": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["node_modules/@types", "typings"],
     "lib": ["dom", "es5", "esnext"]
   }
 }

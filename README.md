@@ -148,7 +148,7 @@ You'll find more information about the TypeScript compiler [here](https://www.ty
 
 ### Typings
 
-The Phaser typings are in typings/**phaser.d.ts**. You can put your custom type definitions inside typings/**custom.d.ts**.
+You can put your custom type definitions inside typings/**custom.d.ts**.
 
 ### Webpack
 
