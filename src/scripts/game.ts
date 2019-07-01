@@ -6,6 +6,7 @@ const DEFAULT_WIDTH = 1280
 const DEFAULT_HEIGHT = 720
 
 // @ts-ignore https://github.com/photonstorm/phaser/issues/4522
+// still not working in 3.18.1 :/
 const config: GameConfig = {
   backgroundColor: '#ffffff',
   scale: {
