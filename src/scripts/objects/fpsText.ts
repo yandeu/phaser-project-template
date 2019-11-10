@@ -5,7 +5,7 @@ export default class FpsText extends Phaser.GameObjects.Text {
     this.setOrigin(0)
   }
 
-  public update(scene: Phaser.Scene) {
-    this.setText(`fps: ${Math.floor(scene.game.loop.actualFps)}`)
+  public update() {
+    this.setText(`fps: ${Math.floor(this.scene.game.loop.actualFps)}`)
   }
 }
