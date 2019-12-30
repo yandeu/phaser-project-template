@@ -5,9 +5,7 @@ import PreloadScene from './scenes/preloadScene'
 const DEFAULT_WIDTH = 1280
 const DEFAULT_HEIGHT = 720
 
-// @ts-ignore https://github.com/photonstorm/phaser/issues/4522
-// still not working in 3.18.1 :/
-const config: GameConfig = {
+const config: Phaser.Types.Core.GameConfig = {
   backgroundColor: '#ffffff',
   scale: {
     parent: 'phaser-game',
@@ -27,6 +25,5 @@ const config: GameConfig = {
 }
 
 window.addEventListener('load', () => {
-  let game = new Phaser.Game(config)
+  const game = new Phaser.Game(config)
 })
-//
