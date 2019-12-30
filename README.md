@@ -25,6 +25,7 @@ A starter template for <a href="https://phaser.io/" target="_blank" >Phaser 3</a
   <a href="#key-features">Key Features</a> •
   <a href="#preview">Preview</a> •
   <a href="#how-to-use">How To Use</a> •
+  <a href="#enable3d">enable3d</a> •
   <a href="#progressive-web-app-pwa">PWA</a> •
   <a href="#native-app">Native App</a> •
   <a href="#custom-configurations">Custom Configurations</a> •
@@ -87,6 +88,12 @@ $ npm run build
 Change the **gameName** in /webpack/webpack.common.js.
 
 All your game code lies inside the **/src/scripts** folder. All assets need to be inside the **/src/assets** folder in order to get copied to /dist while creating the production build. Do not change the name of the index.html and game.ts files.
+
+## enable3d
+
+<a href="https://github.com/yandeu/enable3d#readme"><img src="readme/enable3d-logo.png" alt="enable3d logo" width="300"></a>
+
+Want to add 3D objects and physics to your Phaser game? Checkout [enable3d](https://github.com/yandeu/enable3d#readme)!
 
 ## Progressive Web App (PWA)
 
