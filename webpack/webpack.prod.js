@@ -2,7 +2,7 @@ const path = require('path')
 const merge = require('webpack-merge')
 const common = require('./webpack.common')
 const JavaScriptObfuscator = require('webpack-obfuscator')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const prod = {
   mode: 'production',
@@ -20,7 +20,7 @@ const prod = {
     }
   },
   plugins: [
-    new CleanWebpackPlugin(['dist/*.js'], { root: path.resolve(__dirname, '../') }),
+    new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../dist/*.js')] }),
     new JavaScriptObfuscator(
       {
         rotateStringArray: true,
