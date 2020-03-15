@@ -1,7 +1,7 @@
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { InjectManifest } = require('workbox-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin')
 
 module.exports = {
   entry: ['./src/scripts/game.ts', './webpack/credits.js'],
@@ -35,8 +35,6 @@ module.exports = {
       { from: 'pwa', to: '' },
       { from: 'src/favicon.ico', to: '' }
     ]),
-    new InjectManifest({
-      swSrc: path.resolve(__dirname, '../pwa/sw.js')
-    })
+    new WorkboxPlugin.GenerateSW()
   ]
 }
