@@ -45,7 +45,7 @@
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2",
     "webpack-obfuscator": "^0.27.4",
-    "workbox-webpack-plugin": "^4.3.1"
+    "workbox-webpack-plugin": "^5.1.2"
   },
   "dependencies": {
     "phaser": "^3.22.0"
