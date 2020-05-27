@@ -83,6 +83,9 @@ $ npm start
 # Ready for production?
 # Build the production ready code to the /dist folder
 $ npm run build
+
+# Play your production ready game in the browser
+$ npm run serve
 ```
 
 Change the **gameName** in /webpack/webpack.common.js.
