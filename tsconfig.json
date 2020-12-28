@@ -8,6 +8,7 @@
     "allowUnreachableCode": false,
     "sourceMap": true,
     "strictPropertyInitialization": false,
+    "allowJs": true,
     "lib": ["dom", "es5", "esnext"]
   }
 }
