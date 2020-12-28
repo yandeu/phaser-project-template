@@ -19,15 +19,15 @@ const prod = {
     }
   },
   plugins: [
-    new WebpackObfuscator(
-      {
-        rotateStringArray: true,
-        stringArray: true,
-        // stringArrayEncoding: 'base64', // disabled by default
-        stringArrayThreshold: 0.75
-      },
-      ['vendors.*.js', 'sw.js']
-    )
+    // disabled by default (uncomment to active)
+    // new WebpackObfuscator(
+    //   {
+    //     rotateStringArray: true,
+    //     stringArray: true,
+    //     stringArrayThreshold: 0.75
+    //   },
+    //   ['vendors.*.js', 'sw.js']
+    // )
   ]
 }
 

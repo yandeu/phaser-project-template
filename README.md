@@ -164,7 +164,9 @@ You can put your custom type definitions inside typings/**custom.d.ts**.
 
 All webpack configs are in the **webpack** folder.
 
-#### Obfuscation
+### Obfuscation
+
+_Obfuscation is disabled by default._
 
 We are using the [webpack-obfuscator](https://github.com/javascript-obfuscator/webpack-obfuscator). Change its settings in webpack/webpack.prod.js if needed. All available options are listed [here](https://github.com/javascript-obfuscator/javascript-obfuscator#javascript-obfuscator-options).
 
