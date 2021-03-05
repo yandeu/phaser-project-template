@@ -8,7 +8,9 @@
     "start": "webpack serve --config webpack/webpack.dev.js",
     "build": "rimraf dist && webpack --config webpack/webpack.prod.js",
     "bundle": "npm run build",
-    "serve": "serve dist"
+    "serve": "serve dist",
+    "format": "prettier --write src/scripts/**",
+    "format:check": "prettier --check src/scripts/**"
   },
   "keywords": [
     "Phaser",
@@ -33,10 +35,11 @@
     "author": "Yannick Deubel (https://github.com/yandeu)"
   },
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12"
   },
   "license": "MIT",
   "devDependencies": {
+    "@yandeu/prettier-config": "^0.0.1",
     "copy-webpack-plugin": "^8.0.0",
     "html-webpack-plugin": "^5.2.0",
     "javascript-obfuscator": "^2.9.5",
