@@ -67,12 +67,12 @@ This is what you get after installing this template. A simple and clean starter 
 
 To clone and run this template, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-```bash
-# Clone this repository
-$ git clone --depth 1 https://github.com/yandeu/phaser-project-template.git phaser3-game
+```console
+# Clone this repository (yes, npx not npm)
+$ npx degit yandeu/phaser-project-template phaser-template
 
 # Go into the repository
-$ cd phaser3-game
+$ cd phaser-template
 
 # Install dependencies
 $ npm install
