@@ -9,8 +9,8 @@
     "build": "rimraf dist && webpack --config webpack/webpack.prod.js",
     "bundle": "npm run build",
     "serve": "serve dist",
-    "format": "prettier --write src/scripts/**",
-    "format:check": "prettier --check src/scripts/**"
+    "format": "prettier --check src/scripts/**",
+    "format:write": "prettier --write src/scripts/**"
   },
   "keywords": [
     "Phaser",
