@@ -69,7 +69,7 @@ To clone and run this template, you'll need [Git](https://git-scm.com) and [Node
 
 ```console
 # Clone this repository (yes, npx not npm)
-$ npx degit yandeu/phaser-project-template phaser-template
+$ npx gitget yandeu/phaser-project-template phaser-template
 
 # Go into the repository
 $ cd phaser-template
