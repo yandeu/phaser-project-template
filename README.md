@@ -64,7 +64,7 @@ This is what you get after installing this template. A simple and clean starter 
 
 To clone and run this template, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-```console
+```bash
 # Clone this repository (yes, npx not npm)
 $ npx gitget yandeu/phaser-project-template phaser-template
 
