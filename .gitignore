@@ -1,5 +1,4 @@
 node_modules
 dist
 .cache
-.vscode
 package-lock.json
