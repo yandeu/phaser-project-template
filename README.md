@@ -101,7 +101,8 @@ Want to add 3D objects and physics to your Phaser game? Checkout [enable3d](http
 
 This template is **100% PWA ready**.
 
-The ServiceWorker is **disabled by default**. Uncomment the line below inside /src/index.html to enable it.
+The ServiceWorker is **disabled by default** and is configured to only work in **production mode**.  
+Uncomment the line below inside /src/index.html to enable it.
 
 ```html
 <script>
