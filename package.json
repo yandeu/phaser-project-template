@@ -45,7 +45,7 @@
     "@yandeu/prettier-config": "^0.0.3",
     "copy-webpack-plugin": "^10.1.0",
     "html-webpack-plugin": "^5.5.0",
-    "javascript-obfuscator": "^3.0.0",
+    "javascript-obfuscator": "^4.0.0",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "serve": "^13.0.2",
