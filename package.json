@@ -8,6 +8,7 @@
     "start": "webpack serve --config webpack/webpack.dev.js",
     "build": "rimraf dist && webpack --config webpack/webpack.prod.js",
     "bundle": "npm run build",
+    "deploy": "touch dist/.nojekyll && gh-pages -t -d dist -m \"Build for $(git log -n1 --pretty=format:\"%h %s\") [skip ci]\"",
     "serve": "serve dist",
     "format": "prettier --check src/scripts/**",
     "format:write": "prettier --write src/scripts/**"
@@ -44,6 +45,7 @@
   "devDependencies": {
     "@yandeu/prettier-config": "^0.0.3",
     "copy-webpack-plugin": "^10.1.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "javascript-obfuscator": "^4.0.0",
     "prettier": "^2.5.1",
