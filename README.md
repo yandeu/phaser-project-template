@@ -132,7 +132,9 @@ Read more about PWA on [developers.google.com](https://developers.google.com/web
 
 ## Native App
 
-The simplest way to build a Native App is using [Capacitor](https://capacitor.ionicframework.com/) and following its [Documentation](https://capacitor.ionicframework.com/docs/).
+The simplest way to build a Native App is using https://html2app.dev/.
+
+Or built it manually using [Capacitor](https://capacitor.ionicframework.com/) and following its [Documentation](https://capacitor.ionicframework.com/docs/).  
 The only thing you need to change after installing Capacitor is the **webDir** inside the **capacitor.config.json** file. Set it to **dist** like so:
 
 ```json
