@@ -48,7 +48,7 @@
     "javascript-obfuscator": "^4.0.0",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
-    "serve": "^13.0.2",
+    "serve": "^14.1.2",
     "ts-loader": "^9.2.6",
     "typescript": "^4.5.3",
     "webpack": "^5.65.0",
