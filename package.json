@@ -39,9 +39,13 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@capacitor/android": "^4.6.2",
+    "@capacitor/core": "^4.6.2",
+    "@capacitor/ios": "^4.6.2",
     "phaser": "^3.55.2"
   },
   "devDependencies": {
+    "@capacitor/cli": "^4.6.2",
     "@yandeu/prettier-config": "^0.0.3",
     "copy-webpack-plugin": "^10.1.0",
     "html-webpack-plugin": "^5.5.0",
