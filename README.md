@@ -114,6 +114,9 @@ Uncomment the line below inside /src/index.html to enable it.
 </script>
 ```
 
+If you want to use ServiceWorker in development mode, you also have to uncomment **all commented lines** in `/webpack/webpack.dev.js`
+
+
 You can easily personalize its settings by following these steps:
 
 - Replace both icons in /pwa/icons with your own.
